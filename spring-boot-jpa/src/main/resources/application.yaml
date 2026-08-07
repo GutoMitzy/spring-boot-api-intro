@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: spring-boot-jpa
+
+server:
+  port: 8082
