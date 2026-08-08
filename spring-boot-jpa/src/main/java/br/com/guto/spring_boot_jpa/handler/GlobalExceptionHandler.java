@@ -1,5 +1,6 @@
 package br.com.guto.spring_boot_jpa.handler;
 
+import br.com.guto.spring_boot_jpa.exception.BadRequestException;
 import br.com.guto.spring_boot_jpa.exception.ErrorResponse;
 import br.com.guto.spring_boot_jpa.exception.NotFoundException;
 import org.springframework.http.HttpStatus;
@@ -28,6 +29,16 @@ public class GlobalExceptionHandler {
                 .build();
 
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+    }
+
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<ErrorResponse> handleBadRequestException(BadRequestException bre) {
+        ErrorResponse response = ErrorResponse.builder()
+                .message(bre.getMessage())
+                .status(HttpStatus.BAD_REQUEST.value())
+                .build();
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
 
 }

@@ -1,6 +1,17 @@
+server:
+  port: 8082
+
 spring:
   application:
     name: spring-boot-jpa
-
-server:
-  port: 8082
+  datasource:
+    url: jdbc:mysql://localhost:3306/gym?createDatabaseIfNotExist=True
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
