@@ -3,13 +3,14 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for spring-boot-web" enabled="true">
+      <profile name="Annotation profile for spring_boot_security" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
+        <module name="spring_boot_security" />
         <module name="spring-boot-web" />
         <module name="spring_boot_jpa" />
       </profile>
@@ -19,6 +20,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="spring-boot-web" options="-parameters" />
       <module name="spring_boot_jpa" options="-parameters" />
+      <module name="spring_boot_security" options="-parameters" />
     </option>
   </component>
 </project>
